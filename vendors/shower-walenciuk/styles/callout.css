@@ -1,0 +1,129 @@
+/* ==========================================================================
+   _callout.css — Slajd: biała "chmurka" z tekstem
+   
+   Użycie: <section class="slide layout-callout theme-dark">
+   
+   Struktura:
+     .callout-box        — biały prostokąt, rośnie z treścią
+       p / ul / strong   — dowolna treść wewnątrz
+   
+   Modyfikatory pozycji chmurki (dodaj do .callout-box):
+     .callout-box--center    — wyśrodkowana (domyślnie)
+     .callout-box--left      — wyrównana do lewej
+     .callout-box--right     — wyrównana do prawej
+     .callout-box--top       — przy górnej krawędzi
+     .callout-box--bottom    — przy dolnej krawędzi
+   
+   Modyfikatory wyglądu:
+     .callout-box--dark      — ciemne tło, jasny tekst (odwrócony)
+     .callout-box--accent    — żółte tło (akcent)
+     .callout-box--outline   — tylko ramka, przezroczyste tło
+   ========================================================================== */
+
+/* ── Slajd bazowy ─────────────────────────────────────────────────────────── */
+
+.slide.layout-callout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 56px;
+}
+
+/* ── Chmurka ──────────────────────────────────────────────────────────────── */
+
+.callout-box {
+  background: #ffffff;
+  color: #111111;
+  padding: 24px 32px;
+  border-radius: 4px;
+
+  /* rośnie z treścią, ale nie za szeroka */
+  width: fit-content;
+  max-width: 80%;
+  min-width: 200px;
+
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.55;
+  /* font-family: var(--font-body, 'Segoe UI', Arial, sans-serif); */
+}
+
+/* ── Pozycja chmurki ──────────────────────────────────────────────────────── */
+
+/* domyślnie wyśrodkowana — flex na .slide robi robotę */
+
+.slide.layout-callout.callout-align-left {
+  justify-content: flex-start;
+}
+
+.slide.layout-callout.callout-align-right {
+  justify-content: flex-end;
+}
+
+.slide.layout-callout.callout-align-top {
+  align-items: flex-start;
+}
+
+.slide.layout-callout.callout-align-bottom {
+  align-items: flex-end;
+}
+
+/* ── Modyfikatory wyglądu ─────────────────────────────────────────────────── */
+
+/* Ciemny wariant */
+.callout-box.callout-box--dark {
+  background: #1e1e1e;
+  color: var(--c-light, #e8e8e8);
+  border: 1px solid #333;
+}
+
+/* Żółty akcent */
+.callout-box.callout-box--accent {
+  background: var(--c-accent, #f0c040);
+  color: #111;
+}
+
+/* Tylko ramka */
+.callout-box.callout-box--outline {
+  background: transparent;
+  color: var(--c-light, #e8e8e8);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ── Treść wewnątrz chmurki ───────────────────────────────────────────────── */
+
+.callout-box p {
+  margin: 0;
+}
+
+.callout-box p + p {
+  margin-top: 10px;
+}
+
+.callout-box strong {
+  font-weight: 700;
+}
+
+.callout-box ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.callout-box ul li {
+  margin-bottom: 4px;
+}
+
+/* ── Opcjonalny tytuł slajdu nad chmurką ─────────────────────────────────── */
+
+.slide.layout-callout.has-title {
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.slide.layout-callout.has-title .callout-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--c-light, #e8e8e8);
+  margin: 0;
+}

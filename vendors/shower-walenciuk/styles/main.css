@@ -1,0 +1,31 @@
+/* ==========================================================================
+   main.css — Barrel Import
+   
+   This single file loads all partials in the correct order.
+   The Shower engine CSS (screen-16x9.css) is loaded in <head> BEFORE this.
+   
+   Order matters:
+   1. Tokens (variables) — must come first
+   2. Base (Shower overrides) — depends on tokens
+   3. Themes (slide backgrounds) — depends on tokens
+   4. Layouts (grid systems) — standalone
+   5. Components (cards, highlights) — depends on tokens
+   6. Code (Prism overrides) — depends on tokens
+   7. Front Page — specific slide
+   8. Utilities — can override anything
+   ========================================================================== */
+
+@import url('./_tokens.css');
+@import url('./_base.css');
+@import url('./_slide-themes.css');
+@import url('./_slide-layouts.css');
+@import url('./_components.css');
+@import url('./_code.css');
+@import url('./_front-page.css');
+@import url('./_utilities.css');
+@import url('./_comparion_table.css');
+@import url('./_agent-diagrams.css');
+@import url('./_references.css');
+@import url('./_slide-decor.css');
+@import url('./callout.css');
+@import url('./_data_table.css');

@@ -1,0 +1,46 @@
+/* ==========================================================================
+   _utilities.css — Small Utility Classes
+   Single-purpose classes for quick adjustments.
+   ========================================================================== */
+
+/* ── Font Size Utilities ─────────────────────────────────────────────────── */
+.text-sm {
+  font-size: 60%;
+  line-height: 0.8px;
+  color: white;
+}
+
+.text-md {
+  font-size: 80% !important;
+  line-height: 80% !important;
+  color: white;
+}
+
+.text-lg {
+  font-size: 140% !important;
+  line-height: 0.8px;
+}
+
+.text-heading-sm {
+  font-size: 1.2em !important;
+}
+
+.text-heading-md {
+  font-size: 1.7em !important;
+}
+
+/* Old aliases */
+.smallerfont  { font-size: 60%;  line-height: 0.8px; color: white; }
+.smallerfont3 { font-size: 80% !important; line-height: 80% !important; color: white; }
+.smallerfont2 { font-size: 140% !important; }
+.smallerfontnew  { font-size: 1.2em !important; }
+.smallerfontnew2 { font-size: 1.7em !important; }
+
+/* ── Overflow / Scroll ───────────────────────────────────────────────────── */
+.canscroll {
+  overflow-y: scroll !important;
+}
+
+.canscrollX {
+  overflow-x: scroll !important;
+}

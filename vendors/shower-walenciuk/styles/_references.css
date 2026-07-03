@@ -1,0 +1,103 @@
+/* ==========================================================================
+   _references.css — Slajd: Źródła i referencje
+   
+   Użycie: <section class="slide layout-references theme-dark">
+   
+   Struktura:
+     .ref-header h2     — tytuł slajdu
+     .ref-table         — tabela z dwiema kolumnami: Źródło | Link
+       thead > tr > th  — nagłówki kolumn
+       tbody > tr > td  — wiersze danych
+         a              — klikalny link
+   ========================================================================== */
+
+/* ── Slajd bazowy ─────────────────────────────────────────────────────────── */
+
+.slide.layout-references {
+  padding: 44px 56px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Nagłówek ────────────────────────────────────────────────────────────── */
+
+.slide.layout-references .ref-header {
+  margin-bottom: 20px;
+}
+
+.slide.layout-references .ref-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: white !important;
+    border: none;
+margin-top:-30px;
+    padding: 0;
+    line-height: 1.3;
+    padding: 15px;
+    background-color: var(--tag-darkestblue) !important;
+}
+
+/* ── Tabela ───────────────────────────────────────────────────────────────── */
+
+.slide.layout-references .ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.4;
+  table-layout: fixed;
+  margin-left: 0px;
+  margin-top: -40px;
+}
+
+/* ── Nagłówki kolumn ─────────────────────────────────────────────────────── */
+
+.slide.layout-references .ref-table thead th {
+  padding: 6px 12px 10px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--c-light, #e8e8e8);
+  border-bottom: 2px solid var(--c-light-dim, #555);
+}
+
+.slide.layout-references .ref-table thead th:first-child {
+  width: 220px;
+}
+
+/* ── Wiersze ─────────────────────────────────────────────────────────────── */
+
+.slide.layout-references .ref-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.slide.layout-references .ref-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.slide.layout-references .ref-table tbody td {
+  padding: 6px 12px;
+  vertical-align: top;
+  color: var(--c-light-mid, #ccc);
+}
+
+.slide.layout-references .ref-table tbody td:first-child {
+  color: var(--c-light, #e8e8e8);
+  font-weight: 500;
+}
+
+/* ── Linki ───────────────────────────────────────────────────────────────── */
+
+.slide.layout-references .ref-table a {
+  color:#7897ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(240, 192, 64, 0.4);
+  word-break: break-all;
+  transition: text-decoration-color 0.15s;
+}
+
+.slide.layout-references .ref-table a:hover {
+  text-decoration-color:  #00ff6a;
+    color:#00ff6a;
+}

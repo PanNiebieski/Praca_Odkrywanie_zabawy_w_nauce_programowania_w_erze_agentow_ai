@@ -1,0 +1,186 @@
+/* ==========================================================================
+   _agent-diagrams.css — Slajdy: Architektury Multi-Agent
+   
+   6 layoutów SVG wbudowanych w slajdy Shower.js:
+     .layout-agent-sequential    — łańcuch agentów
+     .layout-agent-concurrent    — fan-out do agentów równoległych
+     .layout-agent-handoff       — przekazanie sterowania
+     .layout-agent-groupchat     — pętla worker/reviewer
+     .layout-agent-magentic      — orchestrator + agenci + notes
+     .layout-agent-workflow      — siatka kroków workflow
+   
+   Użycie: <section class="slide layout-agent-sequential theme-dark">
+   
+   Każdy slajd zawiera:
+     .ad-header h2            — tytuł slajdu
+     .ad-header .ad-subtitle  — podtytuł (mono, żółty)
+     .ad-grid                 — siatka 3×2 z kafelkami
+     .ad-tile                 — pojedynczy kafelek (tytuł + diagram SVG)
+     .ad-tile--active         — wyróżniony kafelek (border + glow)
+   ========================================================================== */
+
+
+/* ── Bazowy slajd ────────────────────────────────────────────────────────── */
+
+.slide[class*="layout-agent"] {
+  padding: 44px 52px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--bg-dark, #0d0d0d);
+}
+
+/* ── Nagłówek ────────────────────────────────────────────────────────────── */
+
+.slide[class*="layout-agent"] .ad-header {
+  margin-bottom: 18px;
+}
+
+.slide[class*="layout-agent"] .ad-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--c-light, #e8e8e8);
+  border: none;
+  margin: 0 0 3px;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.slide[class*="layout-agent"] .ad-header .ad-subtitle {
+  font-size: 13.5px;
+  color: var(--c-light-mid, #aaa);
+}
+
+.slide[class*="layout-agent"] .ad-header .ad-subtitle .ad-accent {
+  color: var(--c-accent, #f0c040);
+  font-family: var(--font-mono, monospace);
+}
+
+/* ── Siatka 3×2 ──────────────────────────────────────────────────────────── */
+
+.slide[class*="layout-agent"] .ad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0;
+  border: 1.5px solid #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* ── Kafelek ─────────────────────────────────────────────────────────────── */
+
+.slide[class*="layout-agent"] .ad-tile {
+  border-right: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 14px 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.slide[class*="layout-agent"] .ad-tile:nth-child(3n) {
+  border-right: none;
+}
+
+.slide[class*="layout-agent"] .ad-tile:nth-child(n+4) {
+  border-bottom: none;
+}
+
+/* ── Tytuł kafelka ───────────────────────────────────────────────────────── */
+
+.slide[class*="layout-agent"] .ad-tile-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;                /* niebieski jak w oryginale */
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* Wyróżnienie aktywnego kafelka ─────────────────────────────────────────── */
+
+.slide[class*="layout-agent"] .ad-tile--active {
+  background: rgba(91, 200, 245, 0.04);
+  box-shadow: inset 0 0 0 1.5px rgba(91, 200, 245, 0.25);
+}
+
+/* ── SVG wspólne tokeny ──────────────────────────────────────────────────── */
+
+.slide[class*="layout-agent"] .ad-tile svg {
+  width: 100%;
+  flex: 1;
+  overflow: visible;
+}
+
+/* ── Węzły (prostokąty z gradientem blue→pink jak oryginał) ─────────────── */
+
+/*
+  Gradient: niebieski (górny) → różowy/lavender (dolny)
+  Definiujemy przez <defs><linearGradient> w każdym SVG inline.
+  Klasy pomocnicze dla atrybutów fill:
+    .node-top   — górny węzeł (bardziej niebieski)
+    .node-mid   — środkowy (blend)
+    .node-bot   — dolny (bardziej różowy)
+*/
+
+/* ── Strzałki / linie w SVG ─────────────────────────────────────────────── */
+
+/*
+  Strzałki rysowane przez <line> / <path> z marker-end="url(#arr)"
+  Kolor linii: rgba(200,210,240,0.55) — subtelna biel/błękit
+*/
+
+/* ── Layout: slajd z JEDNYM wyróżnionym kafelkiem ───────────────────────── */
+/*
+  Użycie gdy chcesz pokazać jeden diagram na pełnym slajdzie:
+  <section class="slide layout-agent-single theme-dark">
+*/
+
+.slide.layout-agent-single {
+  padding: 44px 52px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--bg-dark, #0d0d0d);
+}
+
+.slide.layout-agent-single .ad-header {
+  margin-bottom: 20px;
+}
+
+.slide.layout-agent-single .ad-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--c-light, #e8e8e8);
+  border: none;
+  margin: 0 0 3px;
+  padding: 0;
+}
+
+.slide.layout-agent-single .ad-header .ad-subtitle {
+  font-size: 13.5px;
+  color: var(--c-light-mid, #aaa);
+}
+
+.slide.layout-agent-single .ad-header .ad-subtitle .ad-accent {
+  color: var(--c-accent, #f0c040);
+  font-family: var(--font-mono, monospace);
+}
+
+.slide.layout-agent-single .ad-single-box {
+  flex: 1;
+  border: 1.5px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.layout-agent-single .ad-single-box svg {
+  width: 100%;
+  height: 100%;
+}

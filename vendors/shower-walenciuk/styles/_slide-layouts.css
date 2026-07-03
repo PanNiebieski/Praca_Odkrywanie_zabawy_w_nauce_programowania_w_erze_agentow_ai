@@ -1,0 +1,869 @@
+/* ==========================================================================
+   _slide-layouts.css — Reusable Slide Layout Grids
+   
+   Each layout is a CSS Grid template applied to a wrapper div inside a slide.
+   USAGE:
+     <section class="slide theme-dark fullscreen">
+       <div class="layout-splitpoint">
+         <div class="split-image"><img src="..." /></div>
+         <div class="split-text"><ol>...</ol></div>
+       </div>
+     </section>
+   ========================================================================== */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   1. SPLIT POINT — Image left, text/bullets right
+   Used for: icon + bullet point slides
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-splitpoint {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  grid-template-areas: "image text";
+  height: 100%;
+  width: 100%;
+}
+
+.layout-splitpoint .split-image {
+  grid-area: image;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-splitpoint .split-image img {
+  width: 90%;
+  padding: 0 5%;
+}
+
+.layout-splitpoint .split-text {
+  grid-area: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   2. CODE GRID — Header + code area (+ optional answer)
+   Used for: code slides with syntax highlighting
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Variant A: minimal header + full scrollable code (default for code slides) */
+.layout-code {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "header" "code";
+}
+
+/* Variant B: bigger header + code */
+.layout-code-titled {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 20% 1fr;
+  grid-template-areas: "header" "code";
+}
+
+/* Variant C: header + code + answer panel */
+.layout-code-answer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr 30%;
+  grid-template-areas: "header" "code" "answer";
+}
+
+/* Shared sub-elements */
+.code-header {
+  grid-area: header;
+  padding: 4px 10px;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-green-deep);
+}
+
+.code-header.variant-purple {
+  background-color: var(--bg-dark-purple);
+}
+
+.code-header.variant-white {
+  background-color: var(--c-white-pure);
+}
+
+.code-header h2 {
+  font-size: 14px !important;
+  padding: 2px 0 !important;
+  margin: 0;
+  color: var(--c-border-code) !important;
+  background-color: transparent;
+  border: none;
+  line-height: 1.4;
+}
+
+.code-body {
+  grid-area: code;
+  border-top: 5px solid var(--c-border-code);
+  background-color: rgb(12, 12, 12);
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.code-body pre {
+  padding-top: 1em !important;
+  margin: 0;
+}
+
+.code-answer {
+  grid-area: answer;
+  display: grid;
+  grid-template-areas: "question" "response";
+  border-top: 5px solid var(--c-border-code);
+  background-color: var(--c-code-panel);
+  color: white;
+}
+
+.code-answer .question {
+  grid-area: question;
+  padding: 5px 0 5px 30px;
+}
+
+.code-answer .response {
+  grid-area: response;
+  margin: 5px 0 50px 30px;
+}
+
+.code-answer .response.full {
+  background-color: whitesmoke;
+  padding-left: 30px;
+  color: #07a;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3. MODULE GRID — Code left, explanation right (2-column)
+   Used for: code + annotation slides
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-module {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 40% 20% 40%;
+  grid-template-areas:
+    "mod-code   mod-header"
+    "mod-code   mod-question"
+    "mod-main   mod-answer";
+}
+
+.layout-module h2 {
+  border: 0 !important;
+}
+
+.layout-module .mod-code {
+  grid-area: mod-code;
+  border-bottom: 5px solid var(--c-border-code);
+  border-right: 5px solid var(--c-border-code);
+  background-color: whitesmoke;
+}
+
+.layout-module .mod-main {
+  grid-area: mod-main;
+  border-right: 5px solid var(--c-border-code);
+  background-color: whitesmoke;
+}
+
+.layout-module .mod-code pre,
+.layout-module .mod-main pre {
+  padding: 20px 0 0 30px !important;
+}
+
+.layout-module .mod-header {
+  grid-area: mod-header;
+  background-color: var(--c-code-header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 5px solid var(--c-border-code);
+}
+
+.layout-module .mod-header h2 {
+  font-size: 26px !important;
+  line-height: 140%;
+  padding: 8px 0 7px !important;
+}
+
+.layout-module .mod-question {
+  grid-area: mod-question;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: var(--c-code-header);
+  border-bottom: 5px solid var(--c-border-code);
+}
+
+.layout-module .mod-answer {
+  grid-area: mod-answer;
+  background-color: var(--c-code-header);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   4. VERTICAL SPLIT — Code left, stacked text right
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-vertical {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 10% 20% 70%;
+  height: 100%;
+  grid-template-areas:
+    "vert-code vert-header"
+    "vert-code vert-question"
+    "vert-code vert-answer";
+}
+
+.layout-vertical .vert-code {
+  grid-area: vert-code;
+  border-right: 5px solid var(--c-border-code);
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+}
+
+.layout-vertical .vert-header {
+  grid-area: vert-header;
+  background-color: var(--c-code-header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 5px solid var(--c-border-code);
+}
+
+.layout-vertical .vert-header h2 {
+  font-size: 18px !important;
+  padding: 8px 0 7px !important;
+  color: var(--c-border-code) !important;
+}
+
+.layout-vertical .vert-question {
+  grid-area: vert-question;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: var(--c-code-header);
+  border-bottom: 5px solid var(--c-border-code);
+}
+
+.layout-vertical .vert-answer {
+  grid-area: vert-answer;
+  background-color: var(--c-code-header);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   5. HERO BANNER — Centered text with top/bottom bars
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 25% 50% 25%;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: "hero-top" "hero-center" "hero-bottom";
+}
+
+.layout-hero .hero-center {
+  grid-area: hero-center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout-hero .hero-center h2 {
+  color: white !important;
+  text-align: center;
+  padding: 0 !important;
+  border: none;
+  background: transparent;
+}
+
+.layout-hero .hero-center a {
+  color: var(--c-border-code);
+  font-size: 150%;
+  text-decoration: none !important;
+}
+
+.layout-hero .hero-top {
+  grid-area: hero-top;
+  border-bottom: 5px solid var(--c-border-code);
+  background-color: var(--c-code-header);
+}
+
+.layout-hero .hero-bottom {
+  grid-area: hero-bottom;
+  border-top: 5px solid var(--c-border-code);
+  background-color: var(--c-code-header);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   6. ICON GRID — 4 columns with images and titles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-icons-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px 15px;
+  height: 100%;
+  width: 100%;
+  padding: 20px 30px;
+  grid-template-areas:
+    "i4-title  i4-title  i4-title  i4-title"
+    "i4-img1   i4-img2   i4-img3   i4-img4"
+    "i4-lbl1   i4-lbl2   i4-lbl3   i4-lbl4";
+}
+
+.layout-icons-4 .icons-title {
+  grid-area: i4-title;
+  text-align: center;
+  align-self: end;
+}
+
+.layout-icons-4 .icons-title h3 {
+  font-size: 180%;
+  color: white;
+  margin: 0;
+}
+
+.layout-icons-4 .icon-1 { grid-area: i4-img1; }
+.layout-icons-4 .icon-2 { grid-area: i4-img2; }
+.layout-icons-4 .icon-3 { grid-area: i4-img3; }
+.layout-icons-4 .icon-4 { grid-area: i4-img4; }
+
+.layout-icons-4 [class^="icon-"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-icons-4 [class^="icon-"] img {
+  max-width: 75%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.layout-icons-4 .label-1 { grid-area: i4-lbl1; }
+.layout-icons-4 .label-2 { grid-area: i4-lbl2; }
+.layout-icons-4 .label-3 { grid-area: i4-lbl3; }
+.layout-icons-4 .label-4 { grid-area: i4-lbl4; }
+
+.layout-icons-4 [class^="label-"] {
+  align-self: start;
+}
+
+.layout-icons-4 [class^="label-"] h3 {
+  text-align: center;
+  font-size: 100%;
+  color: yellow;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7. TWO-COLUMN and THREE-COLUMN comparison layouts
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-compare-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 1.5fr;
+  gap: 40px;
+  height: calc(100% - 50px);
+  width: 100%;
+  grid-template-areas:
+    "cmp-title cmp-title"
+    "cmp-img1  cmp-img2"
+    "cmp-txt1  cmp-txt2";
+}
+
+.layout-compare-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 1.5fr;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+  grid-template-areas:
+    "cmp-title cmp-title cmp-title"
+    "cmp-img1  cmp-img2  cmp-img3"
+    "cmp-txt1  cmp-txt2  cmp-txt3";
+}
+
+.layout-compare-2 .cmp-title,
+.layout-compare-3 .cmp-title { grid-area: cmp-title; }
+
+.layout-compare-2 .cmp-img1,
+.layout-compare-3 .cmp-img1 { grid-area: cmp-img1; display: flex; align-items: center; justify-content: center; }
+
+.layout-compare-2 .cmp-img2,
+.layout-compare-3 .cmp-img2 { grid-area: cmp-img2; display: flex; align-items: center; justify-content: center; }
+
+.layout-compare-3 .cmp-img3 { grid-area: cmp-img3; display: flex; align-items: center; justify-content: center; }
+
+.layout-compare-2 .cmp-txt1,
+.layout-compare-3 .cmp-txt1 { grid-area: cmp-txt1; display: flex; align-items: center; justify-content: center; }
+
+.layout-compare-2 .cmp-txt2,
+.layout-compare-3 .cmp-txt2 { grid-area: cmp-txt2; display: flex; align-items: center; justify-content: center; }
+
+.layout-compare-3 .cmp-txt3 { grid-area: cmp-txt3; display: flex; align-items: center; justify-content: center; }
+
+[class*="layout-compare"] [class^="cmp-img"] img {
+  width: 60%;
+}
+
+[class*="layout-compare"] [class^="cmp-txt"] h3 {
+  text-align: center;
+  font-size: 100%;
+  color: yellow;
+  font-family: Arial, sans-serif;
+  text-transform: capitalize;
+}
+
+[class*="layout-compare"] .cmp-title h3 {
+  font-size: 200%;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7b. TWO-ICON LAYOUT — title top, 2 images side by side, labels below
+   Screenshot ref: "Bez EventSourcing / Z EventSourcing"
+   USAGE:
+     <div class="layout-icons-2">
+       <div class="icons-title"><h3>Title</h3></div>
+       <div class="icon-1"><img src="..." /></div>
+       <div class="icon-2"><img src="..." /></div>
+       <div class="label-1"><h3>Label A</h3></div>
+       <div class="label-2"><h3>Label B</h3></div>
+     </div>
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-icons-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px 30px;
+  height: 100%;
+  width: 100%;
+  padding: 20px 40px;
+  grid-template-areas:
+    "i2-title  i2-title"
+    "i2-img1   i2-img2"
+    "i2-lbl1   i2-lbl2";
+}
+
+.layout-icons-2 .icons-title {
+  grid-area: i2-title;
+  text-align: center;
+  align-self: end;
+}
+
+.layout-icons-2 .icons-title h3 {
+  font-size: 180%;
+  color: white;
+}
+
+.layout-icons-2 .icon-1 { grid-area: i2-img1; }
+.layout-icons-2 .icon-2 { grid-area: i2-img2; }
+
+.layout-icons-2 [class^="icon-"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-icons-2 [class^="icon-"] img {
+  max-width: 80%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.layout-icons-2 .label-1 { grid-area: i2-lbl1; }
+.layout-icons-2 .label-2 { grid-area: i2-lbl2; }
+
+.layout-icons-2 [class^="label-"] h3 {
+  text-align: center;
+  font-size: 130%;
+  color: yellow;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7c. THREE-ICON LAYOUT — 3 columns: image + title + subtitle each
+   Screenshot ref: "CQRS / Różne Modele / Każdy"
+   USAGE:
+     <div class="layout-icons-3">
+       <div class="icon-1"><img src="..." /></div>
+       <div class="icon-2"><img src="..." /></div>
+       <div class="icon-3"><img src="..." /></div>
+       <div class="label-1"><h3>Title</h3><p>Subtitle</p></div>
+       <div class="label-2"><h3>Title</h3><p>Subtitle</p></div>
+       <div class="label-3"><h3>Title</h3><p>Subtitle</p></div>
+     </div>
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-icons-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.4fr 0.6fr;
+  gap: 10px 20px;
+  height: 100%;
+  width: 100%;
+  padding: 30px 30px 20px;
+  grid-template-areas:
+    "i3-img1  i3-img2  i3-img3"
+    "i3-lbl1  i3-lbl2  i3-lbl3";
+}
+
+.layout-icons-3 .icon-1 { grid-area: i3-img1; }
+.layout-icons-3 .icon-2 { grid-area: i3-img2; }
+.layout-icons-3 .icon-3 { grid-area: i3-img3; }
+
+.layout-icons-3 [class^="icon-"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-icons-3 [class^="icon-"] img {
+  max-width: 70%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.layout-icons-3 .label-1 { grid-area: i3-lbl1; }
+.layout-icons-3 .label-2 { grid-area: i3-lbl2; }
+.layout-icons-3 .label-3 { grid-area: i3-lbl3; }
+
+.layout-icons-3 [class^="label-"] {
+  text-align: center;
+  align-self: start;
+}
+
+.layout-icons-3 [class^="label-"] h3 {
+  font-size: 130%;
+  color: yellow;
+  font-family: Arial, sans-serif;
+  margin: 0 0 4px;
+}
+
+.layout-icons-3 [class^="label-"] p {
+  font-size: 80%;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7d. SPLITPOINT-LIST — Image left, table-like list right
+   Screenshot ref: "Jakie paczki NuGet?"
+   - First item: yellow bg, bold, full width
+   - Remaining items: white bg, indented ~40px from left, with gaps between
+   USAGE:
+     <div class="layout-splitpoint-list">
+       <div class="split-image"><img src="..." /></div>
+       <div class="split-text">
+         <ol class="nonumbers">
+           <li class="bold">Heading (yellow bg, bold, full width)</li>
+           <li>Item 1 (indented)</li>
+           <li>Item 2 (indented)</li>
+         </ol>
+       </div>
+     </div>
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-splitpoint-list {
+  display: grid;
+  grid-template-columns: 0.42fr 1fr;
+  grid-template-areas: "spl-image spl-text";
+  height: 100%;
+  width: 100%;
+}
+
+.layout-splitpoint-list .split-image {
+  grid-area: spl-image;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-splitpoint-list .split-image img {
+  width: 65%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+.layout-splitpoint-list .split-text {
+  grid-area: spl-text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 40px 20px 0;
+  overflow-y: auto;
+}
+
+.layout-splitpoint-list li {
+  background-color: var(--c-white) !important;
+  color: var(--c-dark-mid) !important;
+  padding: 10px 16px !important;
+  margin: 0 0 6px 40px !important;
+  font-size: 90%;
+  line-height: 1.5;
+  border: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+  text-indent: 0 !important;
+}
+
+.layout-splitpoint-list li::before {
+  display: none !important;
+}
+
+.layout-splitpoint-list li.bold {
+  background-color: rgb(255, 255, 62) !important;
+  color: var(--c-dark-mid) !important;
+  font-weight: bold;
+  font-size: 100%;
+  margin-left: 0 !important;
+  border-bottom: 2px solid var(--c-dark-mid) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7e. COLORED TILES — Title + grid of colored blocks with text
+   Screenshot ref: "Ważne zasady projektowe" — 3×2 colored rectangles
+   USAGE:
+     <div class="layout-tiles">
+       <div class="tiles-title"><h3>Title</h3></div>
+       <div class="tile sq-orange"><span>Text</span></div>
+       <div class="tile sq-blue"><span>Text</span></div>
+       <div class="tile sq-pink"><span>Text</span></div>
+       <div class="tile sq-green"><span>Text</span></div>
+       <div class="tile sq-gray"><span>Text</span></div>
+     </div>
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 16px;
+  height: 100%;
+  width: 100%;
+  padding: 20px 40px 40px;
+  align-content: start;
+  padding-top: 10px;
+}
+
+.layout-tiles .tiles-title {
+  grid-column: 1 / -1;
+  text-align: center;
+  /* align-self: end; */
+}
+
+.layout-tiles .tiles-title h3 {
+  font-size: 180%;
+  color: white;
+  margin: 0;
+}
+
+.layout-tiles .tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  min-height: 70px;
+}
+
+.layout-tiles .tile span {
+  color: white;
+  font-size: 90%;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7f. SPLITPOINT-MIXED — Image left, grouped rows right
+   Screenshot ref: "Paczka NuGet Fluent Validation"
+   - .bold items: yellow bg, bold, full width (no indent)
+   - Normal items: white bg, indented ~40px, with gaps
+   - Multiple .bold items act as section headers
+   USAGE:
+     <div class="layout-splitpoint-mixed">
+       <div class="split-image"><img src="..." /></div>
+       <div class="split-text">
+         <ol class="nonumbers">
+           <li class="bold">Section heading (yellow, full width)</li>
+           <li>Normal item (indented)</li>
+           <li>Normal item (indented)</li>
+           <li class="bold">Another section heading</li>
+           <li>Normal item (indented)</li>
+         </ol>
+       </div>
+     </div>
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-splitpoint-mixed {
+  display: grid;
+  grid-template-columns: 0.38fr 1fr;
+  grid-template-areas: "spm-image spm-text";
+  height: 100%;
+  width: 100%;
+}
+
+.layout-splitpoint-mixed .split-image {
+  grid-area: spm-image;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-splitpoint-mixed .split-image img {
+  width: 65%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+.layout-splitpoint-mixed .split-text {
+  grid-area: spm-text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 40px 20px 0;
+  overflow-y: auto;
+}
+
+.layout-splitpoint-mixed li {
+  background-color: var(--c-white) !important;
+  color: var(--c-dark-mid) !important;
+  padding: 12px 18px !important;
+  margin: 0 0 6px 40px !important;
+  font-size: 95%;
+  line-height: 1.5;
+  border: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+  text-indent: 0 !important;
+}
+
+.layout-splitpoint-mixed li::before {
+  display: none !important;
+}
+
+.layout-splitpoint-mixed li.bold {
+  background-color: rgb(255, 255, 62) !important;
+  color: var(--c-dark-mid) !important;
+  font-weight: bold;
+  font-size: 105%;
+  margin-left: 0 !important;
+  margin-top: 10px !important;
+  border-bottom: 2px solid var(--c-dark-mid) !important;
+}
+
+.layout-splitpoint-mixed li.bold:first-child {
+  margin-top: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   8. NINE-SQUARE GRID and SIX-SQUARE GRID
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layout-grid-9 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr repeat(3, 0.5fr) 0.2fr;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+.layout-grid-6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 0.5fr 0.5fr 0.2fr;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+.layout-grid-9 .grid-title,
+.layout-grid-6 .grid-title { grid-area: 1 / 1 / 2 / 4; }
+
+.layout-grid-9 .grid-title h3,
+.layout-grid-6 .grid-title h3 {
+  font-size: 200%;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+/* Grid cells */
+.sq-1 { grid-area: 2 / 1 / 3 / 2; }
+.sq-2 { grid-area: 2 / 2 / 3 / 3; }
+.sq-3 { grid-area: 2 / 3 / 3 / 4; }
+.sq-4 { grid-area: 3 / 1 / 4 / 2; }
+.sq-5 { grid-area: 3 / 2 / 4 / 3; }
+.sq-6 { grid-area: 3 / 3 / 4 / 4; }
+.sq-7 { grid-area: 4 / 1 / 5 / 2; }
+.sq-8 { grid-area: 4 / 2 / 5 / 3; }
+.sq-9 { grid-area: 4 / 3 / 5 / 4; }
+
+[class^="sq-"] {
+  margin: 8%;
+  text-align: center;
+  position: relative;
+}
+
+[class^="sq-"] span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 80%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  line-height: 110%;
+}
+
+/* Square background colors */
+.sq-orange  { background-color: #EA5025; }
+.sq-pink    { background-color: #9A2950; }
+.sq-blue    { background-color: #2594B4; }
+.sq-green   { background-color: #8FC146; }
+.sq-purple  { background-color: #5C519C; }
+.sq-gray    { background-color: #7a7a7a; }
+.sq-black   { background-color: black; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BACKWARDS COMPATIBILITY — Old grid class aliases
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Map old names to new layout classes for gradual migration */
+.grid-container-slidepoint { display: grid; grid-template-columns: 0.7fr 1fr; grid-template-areas: "image text"; height: 100%; width: 100%; }
+.SlidePointImage           { grid-area: image; display: flex; align-items: center; justify-content: center; }
+.SlidePointImage img       { width: 90%; padding: 0 5%; }
+.SlidePointText            { grid-area: text; display: flex; align-items: center; justify-content: center; }
+
+/* Keep old grid-container working — auto header + scrollable code */
+.grid-container            { width: 100%; height: 100%; display: grid; grid-template-rows: auto 1fr; grid-template-areas: "HeaderTitle" "PlaceCodeHere"; }
+.grid-container-new        { width: 100%; height: 100%; display: grid; grid-template-rows: 20% 1fr; grid-template-areas: "HeaderTitle" "PlaceCodeHere"; }
+.grid-container-answerquestion { width: 100%; height: 100%; display: grid; grid-template-rows: auto 1fr 30%; grid-template-areas: "HeaderTitle" "PlaceCodeHere" "AnswerCode"; }
+.HeaderTitle               { grid-area: HeaderTitle; padding: 4px 10px; min-height: 28px; display: flex; align-items: center; background-color: var(--bg-green-deep); }
+.HeaderTitle.GG            { background-color: var(--c-white-pure); }
+.HeaderTitle.PP            { background-color: var(--c-white-pure); }
+.HeaderTitle h2            { font-size: 14px !important; padding: 2px 0 !important; margin: 0; color: var(--c-border-code) !important; background-color: transparent; border: none; line-height: 1.4; }
+.PlaceCodeHere             { grid-area: PlaceCodeHere; border-top: 5px solid var(--c-border-code); background-color: rgb(12, 12, 12); overflow-y: auto; overflow-x: auto; }
+.PlaceCodeHere pre         { padding-top: 1em !important; margin: 0; }

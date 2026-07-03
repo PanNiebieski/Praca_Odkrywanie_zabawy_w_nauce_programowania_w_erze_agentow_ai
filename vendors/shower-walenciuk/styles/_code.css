@@ -1,0 +1,47 @@
+/* ==========================================================================
+   _code.css — Prism.js Overrides & Code Slide Styling
+   Merges custom-prism.css + codegrid layout into one file.
+   ========================================================================== */
+
+/* ── Slide-level Prism overrides ─────────────────────────────────────────── */
+.slide.prism {
+  padding: 0 30px 0;
+}
+
+.slide.prism.over {
+  padding: 0 !important;
+}
+
+.slide.prism h2 {
+  padding-top: 40px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  color: var(--c-border-code);
+}
+
+.slide.prism pre[class*="language-"] {
+  background: none;
+  margin: 0;
+  padding-top: 0.5em;
+}
+
+.slide.prism pre[class*="language-"] code {
+  line-height: 50px;
+}
+
+.slide.prism pre[class*="language-"].line-numbers {
+  padding-left: 2.5em;
+}
+
+.slide.prism pre[class*="language-"].line-numbers code {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* ── Generic pre > code reset ────────────────────────────────────────────── */
+.slide pre code {
+  line-height: 1.1 !important;
+  margin-left: -13em;
+  padding: 0 !important;
+  margin-top: -60px;
+}

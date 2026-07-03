@@ -1,0 +1,182 @@
+/* ==========================================================================
+   _slide-decor.css — Dekoracyjne prostokąty w tle slajdów
+   
+   Użycie: dodaj klasę decor-* do <section class="slide ...">
+   Przykład: <section class="slide theme-dark decor-left-mid">
+   
+   Dostępne warianty:
+     .decor-left-mid        — jeden prostokąt, lewy środek
+     .decor-corners         — dwa prostokąty, prawy górny + lewy dolny
+     .decor-corners-glow    — jak corners, ale z radialnym gradientem tła
+     .decor-right-stripe    — pionowy pasek przy prawej krawędzi
+     .decor-bottom-bar      — szeroki prostokąt przy dolnej krawędzi
+     .decor-triple          — trzy prostokąty: lewy górny, prawy środek, lewy dolny
+   
+   Wszystkie warianty używają background-image — brak z-index, brak pseudo-elementów.
+   Tło jest zawsze pod treścią.
+   ========================================================================== */
+
+/* ── Kolor bazowy prostokątów ─────────────────────────────────────────────
+   Zmień rgba aby dopasować do swojego motywu:
+   - jasny szary na ciemnym tle: rgba(255,255,255,0.09)
+   - ciemny na jasnym tle:       rgba(0,0,0,0.06)
+   ─────────────────────────────────────────────────────────────────────── */
+
+/* ── WARIANT 1: Jeden prostokąt, lewy środek ─────────────────────────── */
+/*
+   Jak na Image 1: jeden szeroki szary prostokąt
+   umieszczony po lewej stronie, pionowo wyśrodkowany.
+*/
+
+.slide.decor-left-mid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.09), rgba(255,255,255,0.09)),
+     linear-gradient(rgba(255,255,255,0.09), rgba(255,255,255,0.09));
+  background-repeat: no-repeat;
+  background-size:
+    320px 100px,
+    300px 75px,
+    100% 100%;
+  background-position: left 0 center;
+}
+
+/* ── WARIANT 2: Dwa prostokąty — prawy górny + lewy dolny ───────────── */
+/*
+   Jak na Image 2 (wersja bez gradientu tła):
+   jeden prostokąt w prawym górnym rogu,
+   drugi w lewym dolnym — oba lekko wychodzą poza krawędź.
+*/
+
+.slide.decor-corners {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.09), rgba(255,255,255,0.09)),
+    linear-gradient(rgba(255,255,255,0.09), rgba(255,255,255,0.09));
+  background-repeat: no-repeat;
+  background-size:
+    320px 80px,   /* prawy górny */
+    300px 75px;   /* lewy dolny  */
+  background-position:
+    right 0 top 80px,
+    left 0 bottom 60px;
+}
+
+/* ── WARIANT 3: Corners + radialny gradient tła (jak Image 2) ────────── */
+/*
+   Identyczne prostokąty jak decor-corners,
+   ale tło slajdu ma zielono-czarny radialny gradient.
+   Nadpisuje kolor tła z theme-dark — używaj zamiast theme-dark lub po nim.
+*/
+
+.slide.decor-corners-glow {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.09), rgba(255,255,255,0.09)),
+    linear-gradient(rgba(255,255,255,0.09), rgba(255,255,255,0.09)),
+    radial-gradient(ellipse 70% 60% at 55% 45%, #1a3d1a 0%, #0a0a0a 100%);
+  background-repeat: no-repeat;
+  background-size:
+    320px 80px,
+    300px 75px,
+    100% 100%;
+  background-position:
+    right 0 top 80px,
+    left 0 bottom 60px,
+    center center;
+}
+
+/* ── WARIANT 4: Pionowy pasek przy prawej krawędzi ───────────────────── */
+/*
+   Wysoki wąski prostokąt wzdłuż prawej krawędzi slajdu —
+   dobry jako akcent dla slajdów z dużą ilością tekstu po lewej.
+*/
+
+.slide.decor-right-stripe {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06), rgba(255,255,255,0.06)),
+      linear-gradient(rgba(255,255,255,0.06), rgba(255,255,255,0.06));;
+  background-repeat: no-repeat;
+  background-size: 140px 50%,140px 50%;
+  background-position: right 0 top 0, left 0 bottom 0px;
+}
+
+/* ── WARIANT 5: Szeroki pasek przy dolnej krawędzi ──────────────────── */
+/*
+   Poziomy prostokąt na dole slajdu — jak stopka,
+   ale subtelna, w tle.
+*/
+
+.slide.decor-bottom-bar {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06), rgba(255,255,255,0.06));
+  background-repeat: no-repeat;
+  background-size: 100% 55px;
+  background-position: left 0 bottom 0;
+}
+
+/* ── WARIANT 6: Trzy prostokąty — lewy górny, prawy środek, lewy dolny  */
+/*
+   Bardziej dynamiczny układ z trzema elementami rozmieszczonymi
+   po przekątnej slajdu.
+*/
+
+.slide.decor-triple {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.07), rgba(255,255,255,0.07)),
+    linear-gradient(rgba(255,255,255,0.07), rgba(255,255,255,0.07)),
+    linear-gradient(rgba(255,255,255,0.07), rgba(255,255,255,0.07));
+  background-repeat: no-repeat;
+  background-size:
+    200px 90px,   /* lewy górny  */
+    260px 180px,   /* prawy środek */
+    180px 90px;   /* lewy dolny  */
+  background-position:
+    left 0 top 50px,
+    right 0 center,
+    left 0 bottom 50px;
+}
+
+
+.slide.decor-corners2 {
+  background-image:
+    /* prawy górny */
+    linear-gradient(rgba(255,255,255,0.07), rgba(255,255,255,0.07)),
+    /* lewy dolny */
+    linear-gradient(rgba(255,255,255,0.07), rgba(255,255,255,0.07)),
+    /* opcjonalnie trzeci — prawy dolny */
+    linear-gradient(rgba(255,255,255,0.04), rgba(255,255,255,0.04));
+
+  background-repeat: no-repeat;
+  background-size:
+    220px 110px,   /* rozmiar prawego górnego */
+    200px 120px,   /* rozmiar lewego dolnego */
+    150px 80px;    /* rozmiar trzeciego */
+
+  background-position:
+    right 0 top 60px,    /* prawy górny */
+    left 0 bottom 50px,  /* lewy dolny */
+    right 0 bottom 0;    /* prawy dolny */
+}
+
+.slide.decor-corners::before,
+.slide.decor-corners::after {
+  content: '';
+  position: absolute;
+  z-index: 0;           /* najniższa warstwa — pod całą treścią */
+  background: rgba(255, 255, 255, 0.07); /* szarość na ciemnym tle */
+  border-radius: 4px;
+}
+
+/* Prostokąt prawy górny */
+.slide.decor-corners::before {
+  width: 220px;
+  height: 110px;
+  top: 80px;
+  right: -20px;         /* lekko wychodzi poza krawędź */
+}
+
+/* Prostokąt lewy dolny */
+.slide.decor-corners::after {
+  width: 200px;
+  height: 120px;
+  bottom: 60px;
+  left: -20px;          /* lekko wychodzi poza krawędź */
+}

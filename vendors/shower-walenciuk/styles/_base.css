@@ -1,0 +1,123 @@
+/* ==========================================================================
+   _base.css — Shower Engine Overrides & Global Defaults
+   Keeps the Shower engine working while applying our design system.
+   ========================================================================== */
+
+body {
+  font-family: var(--font-body);
+  color: white;
+}
+
+/* ── Progress Bar ────────────────────────────────────────────────────────── */
+.full .progress {
+  border-color: transparent transparent var(--c-progress);
+}
+
+/* ── Hide Shower's built-in slide counter ribbon ─────────────────────────── */
+.slide::after {
+  display: none;
+}
+
+/* ── Slide Heading Defaults ──────────────────────────────────────────────── */
+.slide h2 {
+  color: var(--c-dark-mid) !important;
+  font-weight: normal;
+  background-color: var(--c-white-pure);
+  padding: 20px;
+  border: 5px solid var(--c-dark-mid);
+}
+
+.slide h2 small {
+  color: gray;
+  font-size: smaller;
+}
+
+.slide h2 em {
+  color: var(--c-highlight);
+  font-style: normal;
+}
+
+.slide h2.shout {
+  color: white;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+/* ── List Item Cards (default) ───────────────────────────────────────────── */
+.slide li {
+  background-color: var(--c-white-pure);
+  padding: var(--card-pad);
+  padding-left: 50px;
+  margin: var(--card-margin);
+  color: var(--c-dark-mid);
+  border: var(--card-border);
+}
+
+.slide.small li {
+  padding: var(--card-pad-small);
+  padding-left: 50px;
+}
+
+/* ── Tighter list cards inside splitpoint layouts ────────────────────────── */
+/* Prevents content from overflowing when 4+ items + nested list */
+.layout-splitpoint li,
+.grid-container-slidepoint li {
+  padding: var(--card-pad-tight);
+  padding-left: 40px;
+  margin: var(--card-margin-tight);
+  font-size: 90%;
+}
+
+/* ── Ordered List Numbers ────────────────────────────────────────────────── */
+.slide ol > li::before {
+  color: var(--c-dark-mid);
+}
+
+/* ── Links & Inline Styles ───────────────────────────────────────────────── */
+.slide a {
+  color: var(--c-link-code);
+}
+
+.slide b,
+.slide strong {
+  color: var(--c-bold);
+}
+
+.slide kbd,
+.slide samp,
+.slide pre mark {
+  background-color: var(--c-highlight);
+}
+
+.slide pre mark.important {
+  background-color: var(--c-error);
+}
+
+/* ── Compact Padding ─────────────────────────────────────────────────────── */
+.slide.compact {
+  padding: var(--slide-pad-compact);
+}
+
+.slide.fullscreen {
+  padding: var(--slide-pad-full) !important;
+}
+
+/* ── Raised Padding — content sits ~80px higher ─────────────────────────── */
+/* Use on slides with heading + list that are not fullscreen.               */
+/* USAGE: <section class="slide theme-dark tag-teal raised">                */
+.slide.raised {
+  padding-top: 30px;
+}
+
+/* ── Shout / Big Text ────────────────────────────────────────────────────── */
+.colors {
+  line-height: 150% !important;
+  font-size: 70px !important;
+}
+
+/* ── Prism Code Color Override ───────────────────────────────────────────── */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: white;
+}

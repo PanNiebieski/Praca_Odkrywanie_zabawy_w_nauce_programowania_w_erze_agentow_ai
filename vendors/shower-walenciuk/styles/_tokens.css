@@ -1,0 +1,110 @@
+/* ==========================================================================
+   _tokens.css — Design Tokens
+   Single source of truth for colors, typography, and spacing.
+   Change a value here → every slide updates automatically.
+   ========================================================================== */
+
+:root {
+  /* ── Brand / Accent Colors ─────────────────────────────────────────────── */
+  --c-accent:          #FF6525;     /* primary orange */
+  --c-accent-alt:      #606aff;     /* secondary blue-violet */
+  --c-link:            #2096BE;     /* links inside slides */
+  --c-link-code:       #2380e6;     /* links in normal slides */
+  --c-highlight:       #f0db4f;     /* <kbd>, <mark> background */
+  --c-bold:            #606aff;     /* <b>, <strong> color */
+  --c-error:           #f7302f;     /* badge, mark.important */
+
+  /* ── Title Colors (front-page heading spans) ───────────────────────────── */
+  --c-title-1:         #ff8060;
+  --c-title-2:         #6dff60;
+  --c-title-3:         #da60ff;
+  --c-title-4:         #60ffea;
+  --c-title-5:         #ff8060;     /* alias — extend as needed */
+  --c-title-6:         #1d0092;
+  --c-title-7:         #2E1A47;
+  --c-title-8:       #0E65FF;
+
+  /* ── Neutral Palette ───────────────────────────────────────────────────── */
+  --c-dark:            #10151B;     /* near-black background */
+  --c-dark-mid:        #414042;     /* text on light cards */
+  --c-dark-soft:       #505363;     /* panel/header backgrounds */
+  --c-gray:            #818181;
+  --c-gray-light:      #E5E5E5;
+  --c-white:           #FBFBFB;     /* card/span backgrounds */
+  --c-white-pure:      #ffffff;
+
+  /* ── Theme: Dark Slide Backgrounds ─────────────────────────────────────── */
+  --bg-dark:           #10151B;
+  --bg-dark-blue:      #505363;     /* "dosblue" */
+  --bg-dark-green:     #506357;     /* "greenmemory" */
+  --bg-dark-purple:    #26203a;
+  --bg-dark-magenta:   hsl(313, 28%, 25%);
+  --bg-dark-red:       rgb(58, 32, 32);
+  --bg-dark-sea:       rgb(32, 58, 58);
+
+  /* ── Theme: Light / Warm Slide Backgrounds ─────────────────────────────── */
+  --bg-cream:          #e6ac8d;
+  --bg-cream-alt:      #FFE0CF;
+  --bg-cream-pink:     #ffd4cf;
+  --bg-light-purple:   #d9cfff;
+  --bg-light-green:    #cfffe3;
+  --bg-light-blue:     #8dc2e6;
+  --bg-light-lavender: #f1cfff;
+  --bg-light-yellow:   #fff8cf;
+
+  /* ── Theme: Vivid Slide Backgrounds ────────────────────────────────────── */
+  --bg-purple:         #9f8de6;
+  --bg-green:          #8de6b0;
+  --bg-green-deep:     #1f3828;
+  --bg-happy:          #2096BE;
+  --bg-orange:         #FF6525;
+  --bg-red:            #F07178;
+  --bg-green-bright:   #A5E88D;
+  --bg-purple-bright:  #800080;
+
+  /* ── Span-Highlight Colors (for .tag-* modifier on dark themes) ────────── */
+  --tag-blue:          #8dc2e6;
+  --tag-green:         #8de6b0;
+  --tag-purple:        #9f8de6;
+  --tag-olive:         #cee68d;
+  --tag-gold:          #e6ce8d;
+  --tag-teal:          #8de3e6;
+  --tag-darkgreen:      #2F5500;
+    --tag-darkblue:      #0E65FF;
+  --tag-darkestblue:      #1D0092;
+  --tag-darkpurple:      #2E1A47;
+
+
+  /* ── Code / Grid Borders ───────────────────────────────────────────────── */
+  --c-border-code:     #b74000;     /* code-grid accent line */
+  --c-code-panel:      #525252;     /* code-grid panel bg */
+  --c-code-header:     #505363;     /* code-grid header bg */
+
+  /* ── IDE-style Backgrounds ─────────────────────────────────────────────── */
+  --bg-docker:         #10151B;
+  --bg-cursor:         #191919;
+  --bg-claude:         #262624;
+  --bg-obsidian:       #1E1E1E;
+  --bg-llstudio:       #12191E;
+  --bg-visualstudio:   #0D0D1B;
+  --bg-github:         #212830;
+
+  /* ── Typography ────────────────────────────────────────────────────────── */
+  --font-body:         'Fira Sans', sans-serif;
+  --font-mono:         Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --font-heading:      'PT Sans Narrow', sans-serif;
+
+  /* ── Spacing ───────────────────────────────────────────────────────────── */
+  --slide-pad:         106px 100px 0;     /* default Shower padding */
+  --slide-pad-compact: 50px;
+  --slide-pad-full:    10px;
+  --card-pad:          15px;
+  --card-pad-small:    3px;
+  --card-pad-tight:    8px;
+  --card-margin:       15px;
+  --card-margin-tight: 8px;
+  --card-border:       2px solid var(--c-dark-mid);
+
+  /* ── Progress Bar ──────────────────────────────────────────────────────── */
+  --c-progress:        var(--c-accent);
+}

@@ -1,0 +1,55 @@
+/* ==========================================================================
+   _front-page.css — Title / Front Page Slide
+   ========================================================================== */
+
+.slide.front-page {
+  background:  rgb(0, 0, 0) 0 100%;
+  background-size: 20%;
+  padding: 70px 40px 0;
+}
+
+.slide.front-page .logo {
+  width: 200px;
+  float: left;
+}
+
+.slide.front-page .details {
+  float: left;
+  width: calc(100% - 250px);
+  padding: 0 0 10px 50px;
+    margin-top: 75px;
+}
+
+.slide.front-page .imag {
+  float: right;
+  width: 240px;
+  padding: 0 0 10px 50px;
+
+
+      margin-top: 175px;
+}
+
+.slide.front-page .imag img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.slide.front-page .details h2 {
+  color: #000;
+  font-size: 26px;
+  line-height: 30px;
+  border: none;
+}
+
+.slide.front-page h2 {
+  color: var(--c-accent-alt);
+  font-weight: normal;
+  background-color: azure;
+  padding: 15px 25px;
+}
+
+.bigbig {
+  font-size: 36px;
+}

@@ -1,0 +1,295 @@
+/* ==========================================================================
+   _slide-themes.css — Slide Background Themes
+   
+   USAGE:  <section class="slide theme-dark">
+           <section class="slide theme-dark tag-blue">    ← colored span highlights
+           <section class="slide theme-gradient-purple">
+   
+   Each theme sets: background, text color, heading style, card/span style.
+   Replaces 40+ individual classes (creamGrey, creamPP, conicG2…) with a
+   composable system.
+   ========================================================================== */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   1. SOLID DARK THEMES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.slide.theme-dark {
+  background-color: var(--bg-dark);
+  color: white;
+}
+
+.slide.theme-dark-blue {
+  background-color: var(--bg-dark-blue);
+  color: white;
+}
+
+.slide.theme-dark-green {
+  background-color: var(--bg-dark-green);
+  color: white;
+}
+
+.slide.theme-dark-purple {
+  background-color: var(--bg-dark-purple);
+  color: white;
+}
+
+.slide.theme-dark-magenta {
+  background-color: var(--bg-dark-magenta);
+  color: white;
+}
+
+.slide.theme-dark-red {
+  background-color: var(--bg-dark-red);
+  color: white;
+}
+
+.slide.theme-dark-sea {
+  background-color: var(--bg-dark-sea);
+  color: white;
+}
+
+.slide.theme-black {
+  background-color: #000;
+  color: white;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   2. SOLID LIGHT / WARM THEMES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.slide.theme-cream {
+  background-color: var(--bg-cream);
+  color: var(--c-dark-mid);
+}
+
+.slide.theme-grey {
+  background-color: var(--c-gray-light);
+  color: var(--c-dark-mid);
+}
+
+.slide.theme-white {
+  background-color: var(--c-white);
+  color: var(--c-dark-mid);
+}
+
+.slide.theme-happy {
+  background-color: var(--bg-happy);
+  color: white;
+}
+
+.slide.theme-orange {
+  background-color: var(--bg-orange);
+  color: white;
+}
+
+.slide.theme-green {
+  background-color: var(--bg-green-bright);
+  color: black;
+}
+
+.slide.theme-purple {
+  background-color: var(--bg-purple-bright);
+  color: white;
+}
+
+.slide.theme-red {
+  background-color: var(--bg-red);
+  color: white;
+}
+
+.slide.theme-vivid-purple {
+  background-color: var(--bg-purple);
+  color: var(--c-dark-mid);
+}
+
+.slide.theme-vivid-green {
+  background-color: var(--bg-green);
+  color: var(--c-dark-mid);
+}
+
+.slide.theme-light-blue {
+  background-color: var(--bg-light-blue);
+  color: var(--c-dark-mid);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3. GRADIENT THEMES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.slide.theme-gradient-green {
+  background: linear-gradient(90deg, rgba(31, 56, 40, 1) 0%, rgba(33, 32, 58, 1) 100%);
+  color: white;
+}
+
+.slide.theme-gradient-green-reverse {
+  background: linear-gradient(90deg, rgba(33, 32, 58, 1) 0%, rgba(31, 56, 40, 1) 100%);
+  color: white;
+}
+
+.slide.theme-gradient-purple {
+  background: linear-gradient(90deg, rgb(38, 32, 58) 0%, rgb(79, 47, 83) 100%);
+  color: white;
+}
+
+.slide.theme-gradient-warm {
+  background: linear-gradient(90deg, rgb(83, 47, 47) 0%, rgb(38, 45, 100) 100%);
+  color: white;
+}
+
+.slide.theme-gradient-blue-black-green {
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(to right, #1e3a5f 0%, #0a2040 25%, #000 50%, #001a1a 75%, #004d4d 100%);
+  color: white;
+}
+
+.slide.theme-gradient-orange-black-purple {
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(to right, #5f1e1e 0%, #400a0a 25%, #000 50%, #10001a 75%, #4d0047 100%);
+  color: white;
+}
+
+/* ── Conic Gradients ─────────────────────────────────────────────────────── */
+
+.slide.theme-conic-warm {
+  background: conic-gradient(at 125% 50%, #715799, #aa5262, #b18f09, #a1505f, #755a9e);
+  color: white;
+}
+
+.slide.theme-conic-cool {
+  background: conic-gradient(at 125% 50%, rgb(34, 204, 96), rgb(74, 72, 155), rgb(53, 133, 82), rgb(79, 47, 83), rgb(74, 72, 155));
+  color: white;
+}
+
+.slide.theme-conic-forest {
+  background: conic-gradient(at 125% 50%, rgba(31, 56, 40, 1), rgba(33, 32, 58, 1), rgba(31, 56, 40, 1), rgb(79, 47, 83), rgba(31, 56, 40, 1));
+  color: white;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   4. IDE-STYLE BACKGROUNDS (for screenshot slides)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.slide.bg-docker    { background-color: var(--bg-docker) !important; }
+.slide.bg-cursor    { background-color: var(--bg-cursor) !important; }
+.slide.bg-claude    { background-color: var(--bg-claude) !important; }
+.slide.bg-obsidian  { background-color: var(--bg-obsidian) !important; }
+.slide.bg-llstudio  { background-color: var(--bg-llstudio) !important; }
+.slide.bg-vscode    { background-color: var(--bg-visualstudio) !important; }
+.slide.bg-github    { background-color: var(--bg-github) !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   5. SHARED THEME BEHAVIORS
+   All dark/gradient/conic themes get white-background span highlights.
+   Instead of listing 30 selectors, we use a shared attribute.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/*
+   For any theme that needs white-background span>span highlights,
+   add the [data-highlight] attribute or use these classes:
+*/
+.slide[class*="theme-dark"] span span,
+.slide[class*="theme-gradient"] span span,
+.slide[class*="theme-conic"] span span,
+.slide.theme-black span span,
+.slide.theme-cream span span,
+.slide.theme-dark-blue span span,
+.slide.theme-dark-green span span,
+.slide.theme-happy span span {
+  background-color: var(--c-white);
+  padding: 5px;
+  color: var(--c-dark-mid);
+}
+
+/* ── Grey theme span highlight ───────────────────────────────────────────── */
+.slide.theme-grey span span {
+  background-color: var(--c-white);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   6. TAG MODIFIERS (colored span highlights on dark theme)
+   USAGE: <section class="slide theme-dark tag-blue">
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.slide.tag-blue span span   { background-color: var(--tag-blue);   color: white; }
+.slide.tag-green span span  { background-color: var(--tag-green);  color: black; }
+.slide.tag-purple span span { background-color: var(--tag-purple); color: white; }
+.slide.tag-olive span span  { background-color: var(--tag-olive);  color: black; }
+.slide.tag-gold span span   { background-color: var(--tag-gold);   color: black; }
+.slide.tag-teal span span   { background-color: var(--tag-teal);   color: black; }
+.slide.tag-darkgreen span span   { background-color: var(--tag-darkgreen);   color: white; }
+.slide.tag-darkblue span span   { background-color: var( --tag-darkblue);   color: white; }
+.slide.tag-darkestblue span span   { background-color: var( --tag-darkestblue);   color: white; }
+.slide.tag-darkpurple span span   { background-color: var( --tag-darkpurple);   color: white; }
+
+
+/* ── Memory theme (special variant of dark-green) ────────────────────────── */
+.slide.theme-memory {
+  background-color: var(--bg-dark-green);
+  color: white;
+}
+
+.slide.theme-memory h2 {
+  color: white !important;
+  background-color: var(--bg-dark-green);
+  border: 5px solid yellow;
+}
+
+.slide.theme-memory li {
+  background-color: var(--bg-dark-green);
+  color: white;
+}
+
+.slide.theme-memory ol > li::before {
+  color: yellow;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BACKWARDS COMPATIBILITY ALIASES
+   Map old class names → new theme classes so existing HTML still works.
+   Remove these once you've migrated all slides.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.slide.creamGrey       { background-color: var(--bg-dark) !important; color: white; }
+.slide.creamGrey.kkk   { background-color: var(--bg-dark) !important; }
+.slide.creamGrey.bbb   { background-color: var(--c-gray) !important; }
+.slide.creamGrey.ggg   { background-color: var(--c-gray) !important; }
+.slide.creamGrey.ooo   { background-color: var(--c-gray) !important; }
+.slide.creamGrey.lll   { background-color: var(--c-gray) !important; }
+
+.slide.creamGrey span span     { background-color: var(--c-white); padding: 5px; }
+.slide.creamGrey.kkk span span { background-color: var(--tag-teal); padding: 5px; color: black; }
+.slide.creamGrey.bbb span span { background-color: var(--tag-blue); padding: 5px; color: white; }
+.slide.creamGrey.ggg span span { background-color: var(--tag-green); padding: 5px; color: black; }
+.slide.creamGrey.ppp span span { background-color: var(--tag-purple); padding: 5px; color: white; }
+.slide.creamGrey.ooo span span { background-color: var(--tag-olive); padding: 5px; color: black; }
+.slide.creamGrey.lll span span { background-color: var(--tag-gold); padding: 5px; color: black; }
+.slide.creamGrey span span a   { color: var(--c-link); }
+
+/* Old gradient aliases */
+.slide.creamGGGragient        { background: linear-gradient(90deg, rgba(31,56,40,1) 0%, rgba(33,32,58,1) 100%); color: white; }
+.slide.creamGGGragientReverse { background: linear-gradient(90deg, rgba(33,32,58,1) 0%, rgba(31,56,40,1) 100%); color: white; }
+.slide.creamPPPGragient       { background: linear-gradient(90deg, rgb(38, 32, 58) 0%, rgb(79, 47, 83) 100%); color: white; }
+.slide.creammBBBGragient      { background: linear-gradient(90deg, rgb(83, 47, 47) 0%, rgb(38, 45, 100) 100%); color: white; }
+.slide.conicG                 { background: conic-gradient(at 125% 50%, #715799, #aa5262, #b18f09, #a1505f, #755a9e); color: white; }
+.slide.conicG2                { background: conic-gradient(at 125% 50%, rgb(34, 204, 96), rgb(74, 72, 155), rgb(53, 133, 82), rgb(79, 47, 83), rgb(74, 72, 155)); color: white; }
+.slide.conicG3                { background: conic-gradient(at 125% 50%, rgba(31,56,40,1), rgba(33,32,58,1), rgba(31,56,40,1), rgb(79, 47, 83), rgba(31,56,40,1)); color: white; }
+
+/* Old solid aliases */
+.slide.dosblue      { background-color: var(--bg-dark-blue); color: white; }
+.slide.greenmemory  { background-color: var(--bg-dark-green); color: white; }
+.slide.happy        { background-color: var(--bg-happy); color: white; }
+.slide.cream        { background-color: var(--bg-cream); color: var(--c-dark-mid); }
+.slide.grey         { background-color: var(--c-gray-light); color: var(--c-dark-mid); }
+.slide.creamP       { background-color: var(--bg-purple); color: var(--c-dark-mid); }
+.slide.creamPP      { background-color: var(--bg-dark-purple); color: var(--c-dark-mid); }
+.slide.creamPPP     { background-color: var(--bg-dark-magenta); color: var(--c-dark-mid); }
+.slide.creamB       { background-color: var(--bg-light-blue); color: var(--c-dark-mid); }
+.slide.creamG       { background-color: var(--bg-green); color: var(--c-dark-mid); }
+.slide.creamGG      { background-color: var(--bg-green-deep); color: var(--c-dark-mid); }
+.slide.creamR       { background-color: var(--bg-dark-red); color: var(--c-dark-mid); }
+.slide.creamSea     { background-color: var(--bg-dark-sea); color: var(--c-dark-mid); }
+.slide.creamBlack   { background-color: black; color: var(--c-dark-mid); }
+.slide.visgrey      { background-color: var(--c-white); color: var(--c-dark-mid); }

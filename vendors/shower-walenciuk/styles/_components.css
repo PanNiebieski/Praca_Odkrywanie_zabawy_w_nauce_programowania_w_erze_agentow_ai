@@ -1,0 +1,219 @@
+/* ==========================================================================
+   _components.css — Reusable UI Components
+   Inline highlights, color spans, badges, etc.
+   ========================================================================== */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   1. INLINE COLOR HIGHLIGHTS
+   USAGE: <span class="hl-green">text</span>
+   Replaces standalone .green, .red, .yellow, .blue, .pruple classes.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.hl-green {
+  background-color: rgb(39, 175, 39) !important;
+  color: white !important;
+  padding: 5px;
+}
+
+.hl-red {
+  background-color: red;
+  color: white;
+  padding: 5px;
+}
+
+.hl-orange {
+  background-color: var(--c-accent) !important;
+  color: white !important;
+  padding: 5px;
+}
+
+.hl-purple {
+  background-color: purple;
+  color: white;
+  padding: 5px;
+}
+
+.hl-blue {
+  background-color: var(--c-link) !important;
+  color: white !important;
+  padding: 5px;
+}
+
+.hl-blue-bright {
+  background-color: rgb(0, 153, 255) !important;
+  color: white !important;
+  padding: 5px;
+}
+
+.hl-blue-cyan {
+  background-color: rgb(0, 225, 255);
+  color: white;
+  padding: 5px;
+}
+
+.hl-black {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 5px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   2. TITLE HEADING COLORS (for front-page <span> elements)
+   USAGE: <span class="tc-1">Playwright +</span>
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.tc-1 { color: var(--c-title-1); }
+.tc-2 { color: var(--c-title-2); }
+.tc-3 { color: var(--c-title-3); }
+.tc-4 { color: var(--c-title-4); }
+.tc-5 { color: var(--c-title-5); }
+.tc-6 { color: var(--c-title-6); }
+.tc-7 { color: var(--c-title-7); }
+
+
+/* Old aliases */
+.titlec1 { color: var(--c-title-1); }
+.titlec2 { color: var(--c-title-2); }
+.titlec3 { color: var(--c-title-3); }
+.titlec4 { color: var(--c-title-4); }
+.titlec6 { color: var(--c-title-6); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3. TEXT COLOR MODIFIERS (for text on specific spans)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.text-orange span { color: #690 !important; }
+.text-deep-blue span { color: #0b00b7 !important; }
+.text-sea-green span { color: #00b784 !important; }
+
+/* Old aliases */
+.orangetext span   { color: #690 !important; }
+.deepbluetext span { color: #0b00b7 !important; }
+.greenseatext span { color: #00b784 !important; }
+.giveorange        { color: #F55300 !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   4. CODE HEADER ACCENT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.headerCODE {
+  color: var(--c-border-code) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   5. DECORATIVE BORDER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.bordered {
+  border-color: rgb(139, 28, 28);
+  border-style: solid;
+  border-width: 20px;
+}
+
+/* Old alias */
+.sss {
+  border-color: rgb(139, 28, 28);
+  border-style: solid;
+  border-width: 20px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   6. BADGE OVERRIDE (fullscreen toggle)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.badge.badge-top-left {
+  top: 0;
+  left: 0;
+}
+
+.badge.badge-top-left a {
+  background: var(--c-error);
+  transform: rotate(-45deg);
+}
+
+.badge.badge-top-left a:hover {
+  background: var(--c-highlight);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7. LIST VARIANTS (smaller font sizes for dense content)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.slide.list-small li {
+  background-color: white;
+  padding: 0 0 0 50px !important;
+  margin: 10px !important;
+  color: var(--c-dark-mid);
+  border: 2px solid var(--c-dark-mid);
+}
+
+.slide.list-xs li {
+  background-color: white;
+  padding: 0 0 0 50px !important;
+  font-size: 70%;
+  margin: 10px !important;
+  color: var(--c-dark-mid);
+  border: 2px solid var(--c-dark-mid);
+}
+
+.slide.list-xxs li {
+  background-color: white;
+  padding: 0 0 0 50px !important;
+  font-size: 40%;
+  margin: 10px !important;
+  color: var(--c-dark-mid);
+  border: 1px solid var(--c-dark-mid);
+}
+
+/* Old aliases */
+.slide.smaller li  { background-color: white; padding: 0 0 0 50px !important; margin: 10px !important; color: var(--c-dark-mid); border: 2px solid var(--c-dark-mid); }
+.slide.evensmaller li { background-color: white; padding: 0 0 0 50px !important; font-size: 70%; margin: 10px !important; color: var(--c-dark-mid); border: 2px solid var(--c-dark-mid); }
+.slide.smallest li { background-color: white; padding: 0 0 0 50px !important; font-size: 40%; margin: 10px !important; color: var(--c-dark-mid); border: 1px solid var(--c-dark-mid); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   8. NO-NUMBER LIST (ordered list without numbers)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.slide ol.nonumbers > li::before {
+  padding-right: 0.2em;
+  width: 1em;
+  content: "";
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   9. ICON FILTER (for tinting white icons)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.iconfill {
+  filter: hue-rotate(80deg) brightness(0.9);
+}
+
+/* Old alias kept for compat */
+.backgroundgrey {
+  background: #545454 !important;
+}
+
+.bhgry {
+  background-color: #818487;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   10. BACKGROUND ORIGINAL (legacy)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.backgroundOrginal {
+  background-color: var(--bg-cream-alt);
+}
+
+/* Old inline highlight aliases that still need to work */
+.green  { background-color: rgb(39, 175, 39) !important; color: white !important; padding: 5px; }
+.red    { background-color: red; color: white; padding: 5px; }
+.yellow { background-color: var(--c-accent) !important; color: white !important; padding: 5px; }
+.pruple { background-color: purple; color: white; padding: 5px; }
+.blackspan { background-color: rgb(0, 0, 0); color: white; padding: 5px; }
+.blue   { background-color: var(--c-link) !important; color: white !important; padding: 5px; }
+.blue2  { background-color: rgb(0, 153, 255) !important; color: white !important; padding: 5px; }
+.blue3  { background-color: rgb(0, 225, 255); color: white; padding: 5px; }
+.bold   { font-weight: bold; background-color: rgb(255, 255, 62) !important; }
+.bold2   { font-weight: bold; background-color: var(--tag-darkestblue) !important; color:white !important; border-color: rgb(36, 36, 36) !important; }
+.bold3   { font-weight: bold; background-color: var(--tag-darkpurple) !important; color:white !important; border-color: rgb(36, 36, 36) !important; }

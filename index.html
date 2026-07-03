@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Odkrywanie zabawy w nauce programowania w erze agentów AI</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,900&amp;subset=latin-ext" rel="stylesheet" />
+
+    <!-- 1. Shower Engine (unchanged) -->
+    <link rel="stylesheet" href="vendors/shower-ribbon/styles/screen-16x9.css" />
+
+    <!-- 2. NEW: Refactored main.css (replaces old main.css, badge.css, front-page.css) -->
+    <!--    Put all 9 files (_tokens.css, _base.css, etc.) in the same folder.        -->
+    <!--    main.css uses @import to load them in the correct order.                   -->
+    <link rel="stylesheet" href="vendors/shower-walenciuk/styles/main.css" />
+
+    <!-- 3. Prism.js syntax highlighting (unchanged) -->
+    <link rel="stylesheet" href="vendors/prism/custom-prism.css" />
+    <link rel="stylesheet" href="vendors/prism/prism-my-dark.css" />
+    <link rel="stylesheet" href="codegrid-dark.css" />
+
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Odkrywanie zabawy w nauce programowania w erze agentów AI">
+    <meta property="og:description" content="Presentation for WDI">
+    <meta property="og:url" content="https://panniebieski.github.io/MSTech_Od_zera_do_agenta_AI_w_C_Microsoft_Agent_Framework_1_0_i_MCP_w_praktyce/">
+    <meta property="og:site_name" content="Odkrywanie zabawy w nauce programowania w erze agentów AI">
+    <meta property="og:image" content="https://panniebieski.github.io/MSTech_Od_zera_do_agenta_AI_w_C_Microsoft_Agent_Framework_1_0_i_MCP_w_praktyce/forSocialMedia/FacebookImageForMainPage.jpg"><meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:title" content="Odkrywanie zabawy w nauce programowania w erze agentów AI">
+    <meta name="twitter:description" content="Presentation for DataScience Summit 2026">
+    <meta name="twitter:image" content="https://panniebieski.github.io/MSTech_Od_zera_do_agenta_AI_w_C_Microsoft_Agent_Framework_1_0_i_MCP_w_praktyce/forSocialMedia/FacebookImageForMainPage.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@walenciukc">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://panniebieski.github.io/MSTech_Od_zera_do_agenta_AI_w_C_Microsoft_Agent_Framework_1_0_i_MCP_w_praktyce/forSocialMedia/icon/icon16x16.png">
+    <link rel="apple-touch-icon" href="https://panniebieski.github.io/MSTech_Od_zera_do_agenta_AI_w_C_Microsoft_Agent_Framework_1_0_i_MCP_w_praktyce/forSocialMedia/icon180x180.png">
+    <link rel="shortcut icon" href="https://panniebieski.github.io/MSTech_Od_zera_do_agenta_AI_w_C_Microsoft_Agent_Framework_1_0_i_MCP_w_praktyce/forSocialMedia/icon16x16.png">
+</head>
+
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Odkrywanie zabawy w nauce programowania</h1>
+        <p> w erze agentów AI</p>
+    </header>
+
+    <section class="slide front-page">
+        <div class="details">
+          
+            <h2 class="bigbig"><strong style="font-size: 35px; line-height: 1.3;">
+                <span class="tc-8">Odkrywanie zabawy w nauce </span><br />
+                <span class="tc-6">programowania </span><br />
+                <span class="tc-8">w erze agentów AI</span>
+            </strong></h2>
+            <h2><a href="https://twitter.com/WalenciukC">@walenciukC</a></h2>
+        </div>
+        <div class="imag">
+            <img src="images/my-avatar.jpg" alt="Speaker" />
+        </div>
+    </section>
+    <section class="slide theme-dark tag-darkestblue decor-corners-glow">
+        <span class="shout colors"><span>
+           Co myślicie o AI?
+        </span></span>
+    </section>
+
+        <section class="slide theme-dark tag-darkestblue decor-corners-glow">
+        <span class="shout colors"><span>
+           Moja historia
+        </span></span>
+    </section>
+
+    <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           Mamy rok 2026
+        </span></span>
+    </section>
+        <section class="slide theme-black" style="background-color: azure;">
+        <figure>
+            <img class="cover" src="pictures/01.png" alt="screenshot" />
+        </figure>
+    </section>
+            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/01-1.png" alt="screenshot" />
+        </figure>
+    </section>
+        <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/tokens6.jpg" alt="screenshot" />
+        </figure>
+    </section>
+        <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/tokens.jpg" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/tokens4.jpg" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/tokens3.jpg" alt="screenshot" />
+        </figure>
+    </section>
+            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/tokens5.jpg" alt="screenshot" />
+        </figure>
+    </section>
+            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/token7.png" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/01.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Jak w tych czasach mam sie : &nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <ol class="nonumbers">
+                        <li class="next">Uczyć się, aby być lepszy</li>
+                        <li class="next">Znajdować chęć do działania</li>
+                        <li class="next">Nie wypalić się</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="slide theme-dark tag-darkestblue decor-corners-glow">
+        <span class="shout colors"><span>
+           Najważniejszy jest pierwszy krok, a potem kolejny i kolejny...
+        </span></span>
+    </section>
+   <section class="slide theme-dark tag-darkestblue decor-corners-glow">
+        <span class="shout colors"><span>
+           Nauka przez budowanie czegoś
+        </span></span>
+    </section>
+    <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           Tylko świadome budowanie
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           Z użyciem lokalnych narzędzi i zasobów
+        </span></span>
+    </section>
+
+                    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/10.png" alt="screenshot" />
+        </figure>
+    </section>
+                    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/11.png" alt="screenshot" />
+        </figure>
+    </section>
+                        <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/12.png" alt="screenshot" />
+        </figure>
+    </section>
+        <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Ollama Python Client</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 19px; overflow: hidden;">
+                    <code style="line-height: 19px !important;" class="language-python">
+                        import ollama
+
+                        # Inicjalizacja klienta ollama z dokładnym adresem
+                        client = ollama.Client(host='http://localhost:11434')
+
+                        # Wywołanie modelu z przykładowym promptem
+                        response = client.generate(
+                            model="llama3",
+                            prompt="Dlaczego trawa jest zielona?"
+                        )
+
+                        # Wyświetlenie odpowiedzi
+                        print(response['response'])
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+    <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Ollama C# Client</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 15px; overflow: hidden;">
+                    <code style="line-height: 15px !important;" class="language-cs">
+
+
+                        using Microsoft.Extensions.AI;
+                        using Microsoft.Extensions.DependencyInjection;
+                        using Microsoft.Extensions.Hosting;
+
+                        var builder = Host.CreateApplicationBuilder();
+
+                        builder.Services.AddChatClient
+                            (new OllamaChatClient(new Uri(&quot;http://localhost:11434&quot;),
+                            &quot;llama3&quot;));
+
+                        var app = builder.Build();
+
+                        var chatClient = app.Services.
+                            GetRequiredService&lt;IChatClient&gt;();
+
+                        var chatHistory = new List&lt;ChatMessage&gt;();
+
+                        while (true)
+                        {
+                            Console.WriteLine(&quot;Enter your prompt:&quot;);
+                            var userPrompt = Console.ReadLine();
+                            chatHistory.Add(new ChatMessage(ChatRole.User, userPrompt));
+
+                            Console.WriteLine(&quot;Response from AI:&quot;);
+                            var chatResponse = &quot;&quot;;
+                            await foreach (var item in
+                                chatClient.CompleteStreamingAsync(chatHistory))
+                            {
+                                // We&#39;re streaming the response,
+                                // so we get each message as it arrives
+                                Console.Write(item.Text);
+                                chatResponse += item.Text;
+                            }
+                            chatHistory.Add(new ChatMessage(ChatRole.Assistant,
+                                chatResponse));
+                            Console.WriteLine();
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+  <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           Oto przykładowy projekt
+        </span></span>
+    </section>
+      <section class="slide theme-dark tag-darkestblue  decor-corners-glow">
+        <span class="shout colors"><span>
+           Twoja baza notatek z filmów
+        </span></span>
+    </section>
+      <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            Whispier
+        </span></span>
+    </section>
+                        <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/73.png" alt="screenshot" />
+        </figure>
+    </section>
+                        <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/74.png" alt="screenshot" />
+        </figure>
+    </section>
+            <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Wariant 1: fluent flow z metodami statycznymi</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 19px; overflow: hidden;">
+                    <code style="line-height: 19px !important;" class="language-python">
+                        import whisper
+
+                        def transcribe_video(video_path, output_path):
+                            try:
+                                model = whisper.load_model(&quot;base&quot;)
+                                result = model.transcribe(video_path)
+
+                                if not result or &quot;text&quot; not in result:
+                                    print(&quot;Transkrypcja nie powiodła się.&quot;)
+                                    return
+
+                                with open(output_path, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+                                    f.write(result[&quot;text&quot;])
+
+                                print(&quot;Transkrypcja została zapisana pomyślnie.&quot;)
+                            except Exception as e:
+                                print(f&quot;Wystąpił błąd: {e}&quot;)
+
+                        if __name__ == &quot;__main__&quot;:
+                            video_path  = r&quot;D:\WDI_GRAPHQL.mp4&quot;
+                            output_path = r&quot;D:\WDI_GRAPHQL.txt&quot;
+                            transcribe_video(video_path, output_path)
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+            <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Wariant 1: fluent flow z metodami statycznymi</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 19px; overflow: hidden;">
+                    <code style="line-height: 19px !important;" class="language-python">
+                        import whisper
+                        from datetime import timedelta
+
+                        def format_timestamp(seconds):
+                            td = timedelta(seconds=seconds)
+                            return str(td)[:-3].replace(&#39;.&#39;, &#39;,&#39;)
+
+                        def transcribe_to_srt(audio_path, srt_path):
+                            model = whisper.load_model(&quot;base&quot;)  
+                            # Możesz użyć &quot;small&quot;, &quot;medium&quot; lub &quot;large&quot; dla lepszej dokładności
+                            result = model.transcribe(audio_path)
+                            segments = result[&#39;segments&#39;]
+
+                            with open(srt_path, &#39;w&#39;, encoding=&#39;utf-8&#39;) as srt_file:
+                                for i, segment in enumerate(segments, start=1):
+                                    start = format_timestamp(segment[&#39;start&#39;])
+                                    end = format_timestamp(segment[&#39;end&#39;])
+                                    text = segment[&#39;text&#39;].strip()
+                                    srt_file.write(f&quot;{i}\n{start} --&gt; {end}\n{text}\n\n&quot;)
+
+                        # Przykład użycia
+                        transcribe_to_srt(r&quot;D:\WDI_GRAPHQL.mp4&quot;,r&quot;D:\WDI_GRAPHQL.SRT&quot;)
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Wariant 1: fluent flow z metodami statycznymi</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 19px; overflow: hidden;">
+                    <code style="line-height: 19px !important;" class="language-python">
+                        23
+                        0:00:51,600 --&gt; 0:00:54,440
+                        Po raz na jakiś czas patrzę, co się zmienia w grawkulel
+
+                        24
+                        0:00:54,440 --&gt; 0:00:56,320
+                        i jeszcze to w kontekście Cisharpa i Dukneta.
+
+                        25
+                        0:00:56,320 --&gt; 0:00:57,040
+                        Dokładnie.
+
+                        26
+                        0:00:57,520 --&gt; 0:00:59,320
+                        I tak w ten spos&#243;b powstała ta prekcja.
+
+                        27
+                        0:00:59,320 --&gt; 0:01:02,520
+                        No po, mamy mn&#243;stwo zakręć, mn&#243;stwo sposob&#243;w,
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+                        <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/76.png" alt="screenshot" />
+        </figure>
+    </section>
+                    <section class="slide prism over bhgry">
+        <div class="layout-code">
+            <div class="code-header variant-white">
+                <h2>Wariant 1: fluent flow z metodami statycznymi</h2>
+            </div>
+            <div class="code-body canscroll">
+                <pre style="font-size: 19px; overflow: hidden;">
+                    <code style="line-height: 19px !important;" class="language-csharp">
+                        try
+                        {
+                            await transcriber.InitializeAsync(&quot;C:\\MyScripts\\whsipermodel\\ggml-base.bin&quot;);
+
+                            // Transcribe MP3 file
+                            string mp3Result = await transcriber.TranscribeAudioFileAsync
+                                (&quot;D:\\Cool Kids of death - 009 -piosenki o milosci.mp3&quot;);
+                            Console.WriteLine(&quot;MP3 MUSIC Transcription:&quot;);
+                            Console.WriteLine(mp3Result);
+
+                            // Transcribe MP3 file
+                            string mp3Result2 = await transcriber.TranscribeAudioFileAsync
+                                (@&quot;D:\Game Boy Advance： Incredible tech on just 2 AA Batteries.mp3&quot;);
+                            Console.WriteLine(&quot;MP3 Transcription:&quot;);
+                            Console.WriteLine(mp3Result2);
+
+                            // Transcribe video file (audio track will be extracted)
+                            string videoResult = await transcriber.TranscribeAudioFileAsync
+                                (&quot;D:\\AQP71Kcw8e.mp4&quot;);
+                            Console.WriteLine(&quot;\nVideo Transcription:&quot;);
+                            Console.WriteLine(videoResult);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($&quot;Error: {ex.Message}&quot;);
+                        }
+                        finally
+                        {
+                            transcriber.Dispose();
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+            <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">WhisperTranscriber przy użyciu Whisper.NET w C#</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px;overflow: hidden;  " class="language-csharp">
+                    <code style="line-height: 20px !important;">
+                        public class WhisperTranscriber
+                        {
+                            private WhisperFactory whisperFactory;
+                            private WhisperProcessor processor;
+
+                            public async Task InitializeAsync(string modelPath = null)
+                            {
+                                // If no model path provided, download and use a default model
+                                if (string.IsNullOrEmpty(modelPath))
+                                {
+                                    modelPath = await DownloadModelAsync();
+                                }
+
+                                // Verify model file exists
+                                if (!File.Exists(modelPath))
+                                {
+                                    throw new FileNotFoundException($&quot;Whisper model file not found: {modelPath}&quot;);
+                                }
+
+                                // Create Whisper factory and processor
+                                whisperFactory = WhisperFactory.FromPath(modelPath);
+                                processor = whisperFactory.CreateBuilder()
+                                    .WithLanguage(&quot;auto&quot;)
+                                    .Build();
+                            }
+
+                            public async Task&lt;string&gt; TranscribeAudioFileAsync(string inputFilePath)
+                            {
+                                try
+                                {
+                                    string wavFilePath = null;
+
+                                    if (FFmpegConvertToWave.IsFFmpegAvailable() == true)
+                                    {
+                                        wavFilePath = NAudioConvertToWave.ConvertToWav(inputFilePath);
+                                    }
+                                    else
+                                    {
+                                        // Convert to 16kHz mono WAV using FFmpeg
+                                        wavFilePath = await FFmpegConvertToWave.ConvertToWhisperFormatAsync(inputFilePath);
+                                    }
+
+                                    // Transcribe audio
+                                    var fullTranscription = &quot;&quot;;
+
+                                    using (var fileStream = File.OpenRead(wavFilePath))
+                                    {
+                                        await foreach (var segment in processor.ProcessAsync(fileStream))
+                                        {
+                                            Console.WriteLine($&quot;[{segment.Start:hh\\:mm\\:ss} -&gt; {segment.End:hh\\:mm\\:ss}] {segment.Text}&quot;);
+                                            fullTranscription += segment.Text + &quot; &quot;;
+                                        }
+                                    }
+
+                                    // Clean up temporary file if it was created
+                                    if (wavFilePath != inputFilePath &amp;&amp; File.Exists(wavFilePath))
+                                    {
+                                        File.Delete(wavFilePath);
+                                    }
+
+                                    return fullTranscription.Trim();
+                                }
+                                catch (Exception ex)
+                                {
+                                    throw new Exception($&quot;Error transcribing audio: {ex.Message}&quot;, ex);
+                                }
+                            }
+
+
+                            private async Task&lt;string&gt; DownloadModelAsync()
+                            {
+                                var modelDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), &quot;WhisperModels&quot;);
+                                Directory.CreateDirectory(modelDir);
+
+                                var modelPath = Path.Combine(modelDir, &quot;ggml-base.bin&quot;);
+
+                                if (!File.Exists(modelPath))
+                                {
+                                    Console.WriteLine(&quot;Downloading Whisper base model...&quot;);
+                                    using var client = new HttpClient();
+                                    var url = &quot;https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin&quot;;
+
+                                    try
+                                    {
+                                        var response = await client.GetAsync(url);
+                                        response.EnsureSuccessStatusCode();
+
+                                        await using var fileStream = File.Create(modelPath);
+                                        await response.Content.CopyToAsync(fileStream);
+                                        Console.WriteLine($&quot;Model downloaded to: {modelPath}&quot;);
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        throw new Exception($&quot;Failed to download model: {ex.Message}&quot;);
+                                    }
+                                }
+
+                                return modelPath;
+                            }
+
+                            public void Dispose()
+                            {
+                                processor?.Dispose();
+                                whisperFactory?.Dispose();
+                            }
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+                                <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/79.png" alt="screenshot" />
+        </figure>
+    </section>
+        <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle GG"> 
+                <h2 class="headerCODE GG">FFmpegConvertToWave</h2>
+            </div>
+            <div class="PlaceCodeHere canscroll">
+                <pre style="font-size: 20px;overflow: hidden;  " class="language-csharp">
+                    <code style="line-height: 20px !important;">
+                        using NAudio.Wave;
+                        using NAudio.Wave.SampleProviders;
+
+                        namespace ConsoleAppWhispernet;
+
+                        public static class NAudioConvertToWave
+                        {
+                            public static string ConvertToWav(string inputFilePath)
+                            {
+                                var extension = Path.GetExtension(inputFilePath).ToLower();
+                                var outputPath = Path.ChangeExtension(inputFilePath, "_16khz.wav");
+
+                                try
+                                {
+                                    using (var reader = CreateAudioReader(inputFilePath, extension))
+                                    {
+                                        var sampleProvider = ConvertTo16KhzMono
+                                            (reader, out IDisposable resamplerToDispose);
+
+                                        using (resamplerToDispose)
+                                        {
+                                            var waveProvider = new SampleToWaveProvider16(sampleProvider);
+                                            WaveFileWriter.CreateWaveFile(outputPath, waveProvider);
+                                        }
+                                    }
+
+                                    return outputPath;
+                                }
+                                catch (Exception ex)
+                                {
+                                    throw new Exception($"Error converting {inputFilePath} to 16kHz WAV: {ex.Message}", ex);
+                                }
+                            }
+
+
+                            private static AudioFileReader CreateAudioReader
+                                (string inputFilePath, string extension)
+                            {
+                                if (extension == ".mp3" || extension == ".wav")
+                                {
+                                    return new AudioFileReader(inputFilePath);
+                                }
+                                else
+                                {
+                                    // Convert unsupported formats using MediaFoundationReader to a WAV file in memory
+                                    var tempReader = new MediaFoundationReader(inputFilePath);
+                                    var tempWavPath = Path.GetTempFileName();
+                                    WaveFileWriter.CreateWaveFile(tempWavPath, tempReader);
+                                    tempReader.Dispose();
+
+                                    return new AudioFileReader(tempWavPath);
+                                }
+                            }
+
+                            private static ISampleProvider ConvertTo16KhzMono
+                                (AudioFileReader reader, out IDisposable resamplerToDispose)
+                            {
+                                // First, convert to mono if needed
+                                ISampleProvider monoProvider;
+                                if (reader.WaveFormat.Channels == 1)
+                                {
+                                    monoProvider = reader; // Already mono
+                                }
+                                else
+                                {
+                                    monoProvider = new StereoToMonoSampleProvider(reader);
+                                }
+
+                                // Then, resample to 16000 Hz if needed
+                                if (reader.WaveFormat.SampleRate != 16000)
+                                {
+                                    var resampler = new WdlResamplingSampleProvider(monoProvider, 16000);
+                                    resamplerToDispose = reader; // Dispose reader at the end
+                                    return resampler;
+                                }
+
+                                // No resampling needed
+                                resamplerToDispose = reader; // Still need to dispose the reader
+                                return monoProvider;
+                            }
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+                            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/77.png" alt="screenshot" />
+        </figure>
+    </section>
+                            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/78.png" alt="screenshot" />
+        </figure>
+    </section>
+
+                        <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/80.png" alt="screenshot" />
+        </figure>
+    </section>
+                            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/81.png" alt="screenshot" />
+        </figure>
+    </section>
+        <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/02.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Whisper : Modele i perfomance &nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <ol class="nonumbers">
+                        <li class="next">tiny : 39 MB</li>
+                        <li class="next">base : 142 MB</li>
+                        <li class="next">small : 244 MB</li>
+                        <li class="next">medium : 769 MB</li>
+                        <li class="next">large : 1550 MB</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+            <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/01.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Najlepsze praktyki ;</li>
+                    <ol class="nonumbers">
+                        <li class="next">Konwertować wszystko jako plim WAV</li>
+                        <li class="next">Podzielić duże pliki na mniejsze</li>
+                        <li class="next">Zastanowić się do czego jaki model</li>
+                        <li class="next">Wielowątkowo przeta=warzać kilka plików na raz</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+          <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            Whispier ma wiele pod modeli
+        </span></span>
+    </section>
+
+                                <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/91.png" alt="screenshot" />
+        </figure>
+    </section>
+                            <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/92.png" alt="screenshot" />
+        </figure>
+    </section>
+
+              <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            Co dalej?
+        </span></span>
+    </section>
+
+                  <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            Może cały pipeline do bazy Elasticsearch
+        </span></span>
+    </section>
+
+     <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/slides/39.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                      <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            A może RAG dla agentów AI?
+        </span></span>
+    </section>
+
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/slides/qdrant.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                            <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/slides/rag-01.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                                <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/slides/rag-02.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                                <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/slides/rag-03.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                                <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/slides/rag-04.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+                          <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            Każdy z was może to zbudować z LLM
+        </span></span>
+    </section>
+                          <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            Pamiętajcie, że chodzi o zrozumienie jak to działa
+        </span></span>
+    </section>
+                              <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            Czyli o sztukę zadawania pytań
+        </span></span>
+    </section>
+
+
+            <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/04.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Jakie pytania sobie warto zadać</li>
+                    <ol class="nonumbers">
+                        <li class="next">Co to jest wektor? Jak działa szukanie po wektorach?</li>
+                        <li class="next">Co to jest kolejka Kafka, baza Elasticsearch?</li>
+                        <li class="next">Jak lepiej mój agent mógłby korzystać z takiej bazy transkrypcji/notatek</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            Trzeba mieć tą ciekawość
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            Co może jeszcze zasilić waszą ciekawość?
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/05.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Co zbudziło moją ciekawość</li>
+                    <ol class="nonumbers">
+                        <li class="next">Jakieś darmowe modele do generowania głosu z próbek</li>
+                        <li class="next">Jakie są darmowe lokalne modele vision do rozpoznawania obrazów i polskich dokumentów</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="slide theme-dark  tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            Oto lista modeli OCR-Vision dla was do sprawdzenia?
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/06.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                        <li class="next">Qwen3-VL-8B-Instruct</li>
+                        <li class="next">Qwen3-VL-8B-Thinking</li>
+                        <li class="next">Gemma 4 12B</li>
+                        <li class="next">LLaVA-PLLuM</li>
+                        <li class="next">Qianfan-OCR</li>
+                        <li class="next">GLM-OCR</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+            <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+            Ok wrócimy do innych punktów
+        </span></span>
+    </section>
+    <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/iconsFr/01.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Jak w tych czasach mam sie : &nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <ol class="nonumbers">
+                        <li class="next">Uczyć się, aby być lepszy</li>
+                        <li class="next">Znajdować chęć do działania</li>
+                        <li class="next">Nie wypalić się</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+        <section class="slide theme-dark tag-darkestblue  decor-corners-glow">
+        <span class="shout colors"><span>
+            Trzeba mieć tą ciekawość
+        </span></span>
+    </section>
+                                <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/Last.png" alt="blog">
+            <figcaption class="white">CW</figcaption>
+        </figure>
+    </section>
+
+    <!-- Gamepad support (optional) -->
+    <script src="vendors/gamepad/gamepad.js"></script>
+
+    <!-- Shower engine -->
+    <script src="vendors/shower/shower.min.js"></script>
+
+    <!-- Gamepad ↔ Shower bridge -->
+    <script src="vendors/shower-gamepad/shower.gamepad.js"></script>
+
+    <!-- Prism.js syntax highlighting -->
+    <script src="vendors/prism/prism.js"></script>
+    <script src="vendors/prism/custom-prism.js"></script>
+
+    <!-- Fullscreen badge (top-left corner) -->
+    <footer class="badge badge-top-left">
+        <a href="#" class="fullscreen">Fullscreen</a>
+    </footer>
+
+</body>
+</html>

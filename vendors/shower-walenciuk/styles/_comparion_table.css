@@ -1,0 +1,180 @@
+/* ==========================================================================
+   _comparison-table.css — Layout: Tabela porównawcza
+   
+   Użycie: <section class="slide layout-comparison-table">
+   
+   Struktura HTML:
+     .ct-header         — nagłówek slajdu (tytuł + podtytuł)
+     .ct-table          — tabela porównawcza
+       thead > tr       — wiersz nagłówków kolumn (pierwszy th pusty = etykieta wiersza)
+       tbody > tr       — wiersze danych
+         td.ct-label    — etykieta wiersza (Focus, Interop, Memory…)
+         td             — komórki danych (opcjonalnie: .ct-col-highlight)
+   
+   Modyfikatory kolumn:
+     .ct-col-highlight  — wyróżniona kolumna (jaśniejsze tło, żółty nagłówek)
+   
+   Modyfikatory komórek / treści:
+     .ct-pill           — małe okrągłe etykietki inline
+     .ct-pill--yellow   — żółty pill (akcent)
+     .ct-pill--red      — czerwony pill (ostrzeżenie, "Minimal")
+     .ct-pill--green    — zielony pill (pozytywny)
+   ========================================================================== */
+
+/* ── Slajd bazowy ─────────────────────────────────────────────────────────── */
+
+.slide.layout-comparison-table {
+  padding: 50px 60px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Nagłówek slajdu ─────────────────────────────────────────────────────── */
+
+.slide.layout-comparison-table .ct-header {
+  margin-bottom: 24px;
+}
+
+.slide.layout-comparison-table .ct-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--c-light);
+  border: none;
+  margin: 0 0 4px;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.slide.layout-comparison-table .ct-header .ct-subtitle {
+  font-size: 14px;
+  color: var(--c-accent);          /* żółty z tokenów */
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+.slide.layout-comparison-table .ct-header .ct-subtitle span {
+  color: var(--c-light-mid);
+  font-family: var(--font-body);
+}
+
+/* ── Tabela ───────────────────────────────────────────────────────────────── */
+
+.slide.layout-comparison-table .ct-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.45;
+  table-layout: fixed;
+  margin-left: 0px;
+  margin-top: -50px;
+}
+
+/* ── Nagłówki kolumn ─────────────────────────────────────────────────────── */
+
+.slide.layout-comparison-table .ct-table thead th {
+  padding: 8px 14px 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--c-light-mid);
+  border-bottom: 2px solid var(--c-dark-mid);
+  vertical-align: bottom;
+}
+
+.slide.layout-comparison-table .ct-table thead th:first-child {
+  width: 110px;
+  background: transparent;
+  color: transparent;   /* pusta komórka narożna */
+}
+ 
+/* wyróżniona kolumna — żółty nagłówek */
+.slide.layout-comparison-table .ct-table thead th.ct-col-highlight {
+  color: var(--c-accent);
+ color: var(--tag-blue);
+
+}
+
+/* ── Wiersze danych ──────────────────────────────────────────────────────── */
+
+.slide.layout-comparison-table .ct-table tbody tr {
+  border-bottom: 1px solid var(--c-dark-mid);
+}
+
+.slide.layout-comparison-table .ct-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.slide.layout-comparison-table .ct-table tbody td {
+  padding: 9px 14px;
+  vertical-align: top;
+  color: var(--c-light-mid);
+}
+
+/* etykieta wiersza */
+.slide.layout-comparison-table .ct-table tbody td.ct-label {
+  color: var(--c-light-dim, #888);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding-top: 11px;
+}
+
+/* wyróżniona kolumna danych */
+.slide.layout-comparison-table .ct-table tbody td.ct-col-highlight {
+  color: var(--c-light);
+}
+
+/* ── Pilki inline ─────────────────────────────────────────────────────────── */
+
+.ct-pill {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 10px;
+  margin: 0 2px 2px 0;
+  line-height: 1.6;
+}
+
+.ct-pill--yellow {
+  background: var(--c-accent);
+  color: var(--c-dark);
+}
+
+.ct-pill--red {
+  background: #e24b4a;
+  color: #fff;
+}
+
+.ct-pill--green {
+  background: #3b6d11;
+  color: #c0dd97;
+}
+
+.ct-pill--blue{
+  background: #0E65FF;
+  color: #97c7dd;
+}
+
+.ct-pill--purple{
+  background: #2E1A47;
+  color: #b897dd;
+}
+
+/* ── Strzałka ewolucji w thead (opcjonalna) ──────────────────────────────── */
+
+.slide.layout-comparison-table .ct-table thead tr.ct-arrow-row th {
+  border-bottom: none;
+  padding: 0 14px 4px;
+  font-size: 16px;
+  color: var(--c-dark-mid);
+  text-align: center;
+  font-weight: 400;
+}
+
+.slide.layout-comparison-table .ct-table thead tr.ct-arrow-row th:first-child {
+  color: transparent;
+}
